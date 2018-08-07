@@ -6,7 +6,10 @@
 
 - node v8.7.0
 - npm 6.0.0
-- [metamask](https://goo.gl/2NjkmW)
+
+## 準備
+- [metamask](https://goo.gl/2NjkmW)のインストール
+- [Infura](https://infura.io/)の登録
 
 ## インストール
 
