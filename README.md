@@ -55,7 +55,7 @@ APIキーはあとで使います。
 ### 3 下記のファイル及びフォルダをプロジェクト内に作成します。
 - src/ethereum
 - src/ethereum/build/
-- src/ethereum/contracts
+- src/ethereum/contracts/
 - src/ethereum/contracts/Lottery.sol
 - src/ethereum/lottery.js
 - src/ethereum/deploy.js
@@ -285,4 +285,3 @@ export default App;
 ```
 $ npm run start
 ```
-
