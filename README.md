@@ -11,14 +11,6 @@
 - [metamask](https://goo.gl/2NjkmW)のインストール
 - [Infura](https://infura.io/)の登録
 
-## インストール
-
-```
-$ git clone https://github.com/tailup0/lottery-dapps.git
-$ cd lottery-dapps
-$ npm install
-```
-
 ## 開発環境構築手順 ご参考
 
 構築手順はあくまで参考です。
@@ -52,8 +44,16 @@ $ npm install -g npm@6.0.0
 ### 2 [Infura](https://infura.io/)を登録し、APIキーを保存
 APIキーはあとで使います。
 
+### 3 インストール
+
+```
+$ git clone https://github.com/tailup0/lottery-dapps.git
+$ cd lottery-dapps
+$ npm install
+```
+
 ### 3 下記のファイル及びフォルダをプロジェクト内に作成します。
-- src/ethereum
+- src/ethereum/
 - src/ethereum/build/
 - src/ethereum/contracts/
 - src/ethereum/contracts/Lottery.sol
@@ -140,8 +140,8 @@ const Web3 = require('web3');
 const compiledLottery = require('./build/Lottery.json');
 
 const provider = new HDWalletProvider(
-  '1で保存しておいたフレーズ',
-  'https://rinkeby.infura.io/2で保存しておいたAPIキー'
+  '{1で保存しておいたフレーズ}',
+  'https://rinkeby.infura.io/{2で保存しておいたAPIキー}'
 );
 const web3 = new Web3(provider);
 
@@ -170,7 +170,7 @@ import Lottery from './build/Lottery.json';
 
 const instance = new web3.eth.Contract(
     JSON.parse(Lottery.interface),
-    '8で保存しておいたコントラクトアドレス'
+    '{8で保存しておいたコントラクトアドレス}'
 );
 
 export default instance;
@@ -271,8 +271,8 @@ class App extends Component {
 
         <hr />
 
-        <h4>当選者を選択</h4>
-        <button onClick={this.onClick}>当選者を選択</button>
+        <h4>抽選</h4>
+        <button onClick={this.onClick}>抽選</button>
       </div>
     );
   }
